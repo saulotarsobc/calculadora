@@ -1,25 +1,20 @@
-/* 22:57:08 - 28/11/21 */
-
-var result = "";
-var numeroCorrente = "";
-var operacao = "";
+/* 10:20:37 - 29/11/21 */
+var data = {
+    'resultado': '',
+    'corrente': '',
+    'operacao': '',
+    'fator': '',
+};
 
 var teclas = document.querySelectorAll('.tecla');
 teclas.forEach(tecla => {
 
     tecla.addEventListener('click', function() {
 
-        var keyPressed = this.id;
-
-        /* console.log(keyPressed); */
+        var keyPressed = tecla.id;
 
         if (keyPressed == 'igual') {
-            if (operacao != "") {
-                if (operacao == 'mais') {
-                    /*  */
-                }
-            }
-
+            /*  */
         }
 
         if (keyPressed == 'mais') {
@@ -27,7 +22,6 @@ teclas.forEach(tecla => {
         }
 
         if (keyPressed == 'clear') {
-            result = "";
             limparTudo();
         }
 
@@ -40,8 +34,8 @@ teclas.forEach(tecla => {
             keyPressed == '7' ||
             keyPressed == '8' ||
             keyPressed == '9') {
-            numeroCorrente += this.id;
-            showResult(numeroCorrente);
+            data['corrente'] += tecla.id;
+            showResulto(data['corrente']);
         }
 
         if (keyPressed == 'backspace') {
@@ -49,46 +43,51 @@ teclas.forEach(tecla => {
         }
 
         if (keyPressed == '0') {
-            if (numeroCorrente == "") {
-                numeroCorrente += "0.";
-                showResult(numeroCorrente);
-            } else {
-                numeroCorrente += this.id;
-                showResult(numeroCorrente);
-            }
+            /*  */
         }
 
         if (keyPressed == 'ponto') {
-            if (numeroCorrente.includes(".") == false) {
-                numeroCorrente += "0.";
-                showResult(numeroCorrente);
-            }
+            /*  */
         }
+
+        /* debug */
+        showVars();
 
     })
 
 });
 
-/* showResult */
-function showResult(result) {
-    document.getElementById('result').innerHTML = result;
+/* showResulto */
+function showResulto(resulto) {
+    document.getElementById('resulto').innerHTML = resulto;
 }
 
 /* limparDisplay */
 function limparDisplay() {
-    document.getElementById('result').innerHTML = "";
+    document.getElementById('resulto').innerHTML = "";
 }
 
 /* limparTudo */
 function limparTudo() {
-    result = "";
-    result = "";
-    numeroCorrente = "";
+    data = {
+        'resultado': '',
+        'corrente': '',
+        'operacao': '',
+        'fator': '',
+    };
     limparDisplay();
 }
 
 /* backspace */
 function backspace() {
-    numeroCorrente = numeroCorrente.substring(0, numeroCorrente.length - 1);
-    showResult(numeroCorrente)
+    var x = data['corrente'];
+    var i = x.substring(0, x.length - 1);
+    data['corrente'] = i;
+    showResulto(data['corrente']);
+    /*  */
+}
+
+/* showVars */
+function showVars() {
+    console.log(data);
 }

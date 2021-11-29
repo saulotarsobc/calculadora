@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #525252;
+    background-color: #fff;
     /*  */
     #wrap {
         width: 400px;
@@ -16,18 +16,25 @@
         flex-direction: column;
         justify-content: space-between;
         /*  */
+        -webkit-box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.51);
+        box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.51);
+        /*  */
         #display {
-            background-color: #fff;
+            background-color: #ededed;
             width: 100%;
             height: 65px;
             border-radius: 8px;
-            padding: 0 8px;
+            padding: 2px;
             display: flex;
             align-items: center;
             justify-content: right;
-            font-family: monospace;
             color: #333;
             font-size: 44px;
+            overflow: hidden;
+            /*  */
+            -webkit-box-shadow: inset 5px 5px 17px -3px rgba(0, 0, 0, 0.52);
+            box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.52);
+            /*  */
         }
         #table {
             color: #fff;
@@ -39,10 +46,13 @@
                 td {
                     text-align: center;
                     font-size: 30px;
-                    font-family: monospace;
                     border-radius: 8px;
                     background: #97979763;
                     margin: 14px;
+                    transition: all .15s ease-in-out;
+                    &:hover {
+                        background: #d0d0d063;
+                    }
                 }
             }
         }
