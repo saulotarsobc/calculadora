@@ -1,12 +1,16 @@
 #home {
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #525252;
     /*  */
     #wrap {
-        width: 100%;
-        height: 100%;
-        padding: 50px 10px;
+        width: 400px;
+        padding: 30px 10px;
         background-color: #333;
+        border-radius: 8px;
         height: 620px;
         display: flex;
         flex-direction: column;
@@ -15,7 +19,7 @@
         #display {
             background-color: #fff;
             width: 100%;
-            height: 50px;
+            height: 65px;
             border-radius: 8px;
             padding: 0 8px;
             display: flex;
@@ -23,7 +27,7 @@
             justify-content: right;
             font-family: monospace;
             color: #333;
-            font-size: 34px;
+            font-size: 44px;
         }
         #table {
             color: #fff;
@@ -37,7 +41,7 @@
                     font-size: 30px;
                     font-family: monospace;
                     border-radius: 8px;
-                    background: red;
+                    background: #97979763;
                     margin: 14px;
                 }
             }
