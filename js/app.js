@@ -58,10 +58,10 @@ teclas.forEach((tecla) => {
             keyPressed == "9"
         ) {
             /* calculadora.setCorrente = tecla.id;
-                              calculadora.showResultado; */
+                                    calculadora.showResultado; */
         }
 
-        if (keyPressed == "backspace") {
+        if (keyPressed == "dell") {
             /* calculadora.backspace; */
         }
 
