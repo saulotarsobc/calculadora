@@ -1,50 +1,9 @@
-class Calc {
-    constructor() {
-            this.resultado = 0;
-            this.corrente = "";
-            this.operacao = "";
-            this.fator = "";
-        }
-        /* set */
-    set setCorrente(i) {
-            this.corrente += i;
-        }
-        /* get */
-    get info() {
-        console.log(this);
-    }
-
-    set backspace(i) {
-        var i = x.substring(0, this.corrente.length - 1);
-        console.log("backspace");
-        this.corrente = i;
-        this.showResultado;
-    }
-    showResultado() {
-        console.log("showResultado");
-        document.getElementById("resultado").innerHTML = this.resultado;
-    }
-}
-
-let calculadora = new Calc();
-calculadora.info;
-
+let calc = new Calculator();
+calc.info();
 var teclas = document.querySelectorAll(".tecla");
 teclas.forEach((tecla) => {
     tecla.addEventListener("click", function() {
         var keyPressed = tecla.id;
-
-        if (keyPressed == "igual") {
-            /*  */
-        }
-
-        if (keyPressed == "mais") {
-            /*  */
-        }
-
-        if (keyPressed == "clear") {
-            limparTudo();
-        }
 
         if (
             keyPressed == "1" ||
@@ -57,20 +16,20 @@ teclas.forEach((tecla) => {
             keyPressed == "8" ||
             keyPressed == "9"
         ) {
-            /* calculadora.setCorrente = tecla.id;
-                                    calculadora.showResultado; */
+            calc.current = keyPressed;
         }
 
-        if (keyPressed == "dell") {
-            /* calculadora.backspace; */
+        if (
+            keyPressed == "+" ||
+            keyPressed == "-" ||
+            keyPressed == "*" ||
+            keyPressed == "/"
+        ) {
+            calc.operator = keyPressed;
         }
 
-        if (keyPressed == "0") {
-            /*  */
-        }
-
-        if (keyPressed == "ponto") {
-            /*  */
+        if (keyPressed == "clear") {
+            calc.clear();
         }
 
         /* debug */
@@ -79,5 +38,5 @@ teclas.forEach((tecla) => {
 });
 
 function showVars() {
-    calculadora.info;
+    calc.info();
 }
