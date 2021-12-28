@@ -1,7 +1,6 @@
 let calc = new Calculator();
 calc.info();
-var teclas = document.querySelectorAll(".tecla");
-teclas.forEach((tecla) => {
+var teclas = document.querySelectorAll(".tecla").forEach((tecla) => {
     tecla.addEventListener("click", function() {
         var keyPressed = tecla.id;
 
